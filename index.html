@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <script src="jquery.js"></script>
+    <script src="xcConfirm.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="xcConfirm.css"/>
+    <script>
+        $(function(){
+            $('.but').click(function(){
+                if ($(':input').eq(0).val()==123456 && $(':input').eq(1).val()==123456) {
+                    var txt=  "登陆成功";
+                    window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
+                }else if ($(':input').eq(0).val()==12345 && $(':input').eq(1).val()==12345) {
+                    var txt=  "登陆成功";
+                    window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
+                }else {
+                    var txt=  "登陆失败";
+                    window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                }
+            })
+        });
+    </script>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        body{
+            background:radial-gradient(closest-corner,#C8B487 10%,#968267 40%,#655545,#372D28) ;font-family: "Microsoft YaHei";
+
+
+        }
+        #co{
+            width: 400px;height: 320px;background-color:#feffff; margin: 0 auto;overflow: hidden;
+            border-radius: 10px;border: 6px solid rgba(185,168,142,1);position: relative;
+        }
+        .con{
+            width:320px;height: 55px;background-color: rgb(244,244,244);margin-top: 40px;
+            border:3px rgb(241,241,241) solid;border-radius: 6px;margin-left: 35px;overflow: hidden;
+        }
+
+        .conn{
+            width: 60px;height: 30px;border-right: 3px rgb(230,230,230) solid;margin-top: 10px;float: left;
+            background-repeat: no-repeat;background-position:center;
+
+        }
+        input{
+            height: 30px;margin-top: 10px;border:none;font-size: 21px;color: rgb(198,198,198);font-weight:500;
+            letter-spacing: 2px;background-color: rgba(0,0,0,0);text-align: center;
+        }
+        .but{
+            display: block;
+            width:328px;height: 55px;background-color: rgb(227,132,133);margin-left: 35px;margin-top: 25px;
+            border-radius: 5px;color: rgba(242,255,218,1);font-size: 21px;
+        }
+        #top{
+            width: 0px;border-width: 0px 15px 15px 15px;border-color: transparent transparent rgba(254,255,255,1) transparent;border-style: solid;
+            position: absolute;top: 143px;left: 680px; z-index: 2;
+        }
+        #top1{
+            width: 0px;border-width: 0px 20px 20px 20px;border-color: transparent transparent rgba(185,168,142,1) transparent;border-style: solid;
+            position: absolute;top: 135px;left: 675px; z-index: 1;
+        }
+        .login{
+            width:140px;height:45px;background-color: green;margin-bottom: 30px;margin-top: 75px;margin-left: 620px;
+            background-color: rgba(150 ,197 ,70,1);border-radius: 5px;color: rgba(242,255,218,0.9);font-size: 21px;
+            line-height: 45px;text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="top"></div>
+    <div id="top1"></div>
+    <p class="login" style="">Login</p>
+    <div id="co">
+    <div class="con">
+        <div class="conn" style="background-image: url(img/1.png);"></div>
+        <input type="text" value ='Username' onfocus="if (value ='Username'){value =''}" onblur="if (value ==''){value='Username'}">
+    </div>
+    <div class="con">
+        <div class="conn"style="background-image: url(img/2.png);"></div>
+        <input type="text" value ='Password' onfocus="if (value ='Password'){value =''}" onblur="if (value ==''){value='Password'}">
+    </div>
+        <input class="but" type="button" value="Login" >
+    </div>
+</body>
+</html>
